@@ -1,0 +1,19 @@
+{
+    "name": "root/sentinel-role-management",
+    "type": "library",
+    "authors": [
+        {
+            "name": "theeradech dechasit",
+            "email": "notegamer@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Exzcute\\SentinelRoleManagement\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+    	"cartalyst/sentinel": "2.0.*"
+    }
+}
