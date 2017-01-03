@@ -3,11 +3,11 @@
 		<div class="col-xs-6">
 			<div class="checkbox">
 				<input type="checkbox" id="checkbox-<?= $name ?>" checked-all <?=@$readonly?'disabled':'';?> >
-				<label for="checkbox-<?= $name ?>">เลือกทั้งหมด</label>
+				<label for="checkbox-<?= $name ?>"><?=RoleManagement::text('select-all')?></label>
 			</div>
 		</div>
 		<div class="col-xs-6 text-right">
-			<a href="javascript:void(0)" class="hide-all" id="show-<?= $name ?>"><i class="fa fa-plus-square"></i> แสดงทั้งหมด</a>
+			<a href="javascript:void(0)" class="hide-all" id="show-<?= $name ?>"><i class="fa fa-plus-square"></i> <?=RoleManagement::text('show-all')?></a>
 		</div>
 	</div>
 	<ul id="permission-<?= $name ?>">
@@ -20,11 +20,11 @@
 
 					<?php if(substr($modul, 0, 3) == "app"): ?>
 
-						<?=__(str_replace('app.','',$modul))?>
+						<?=RoleManagement::label(str_replace('app.','',$modul))?>
 
 					<?php else: ?>
 
-						<?=__(str_replace('admin.','',$modul))?>
+						<?=RoleManagement::label(str_replace('admin.','',$modul))?>
 
 					<?php endif ?>
 

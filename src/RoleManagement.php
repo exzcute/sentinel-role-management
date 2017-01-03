@@ -7,8 +7,38 @@ class RoleManagement
 
 	public function __construct()
 	{
+		$this->texts = array(
+			'select-all' => 'Select All',
+			'show-all' => 'Show All',
+		);
 		$this->view_path = null;
+		$this->function_hook_label = null;
 		$this->readonly = false;
+	}
+
+	public function hookLabel($function)
+	{
+		$this->function_hook_label = $function;
+	}
+
+	public function label($key)
+	{
+		if($this->function_hook_label){
+			$func = $this->function_hook_label;
+			return $func($key);
+		}else{
+			return $key;
+		}
+	}
+
+	public function setText($key, $value)
+	{
+		$this->texts[$key] = $value;
+	}
+
+	public function text($key)
+	{
+		return $this->texts[$key];
 	}
 	
 	public function loadPermissions($name, $permissions)
